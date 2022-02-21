@@ -3,7 +3,10 @@ import React, { useEffect, useRef, useState } from "react";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { useFrame } from "react-three-fiber";
+import { useBox } from "@react-three/cannon";
 import coin from "../model/coin/scene.gltf";
+import { useSpring, animated } from "@react-spring/three";
+import { colorToRgba } from "@react-spring/shared";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -16,7 +19,12 @@ type GLTFResult = GLTF & {
 
 export function Coin({ ...props }: JSX.IntrinsicElements["group"]) {
   const [trow, setTrow] = useState(false);
-  const group = useRef<THREE.Group>();
+  const meshRef = useRef<THREE.Group>();
+  const animation: any = useSpring({
+    scale: trow ? 2 : 1,
+    rotation: trow ? [0, 2, 3] : [2,5, 0, 0],
+  });
+
   const { nodes, materials } = useGLTF(coin) as GLTFResult;
   useEffect(() => {
     if (trow) {
@@ -25,23 +33,20 @@ export function Coin({ ...props }: JSX.IntrinsicElements["group"]) {
       }, 3000);
     }
   }, [trow]);
-  console.log(trow);
-  //   useFrame(
-  //     () => ((group.current.rotation.x += 0.01))
-  //   );
+
+  // useFrame(() => (meshRef.current.rotation.x += 0.03));
+
   return (
-    <group ref={group} {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
-        <group position={[10, 10, 0]} rotation={[1.56, 0, 0]}>
-          <mesh
-            geometry={nodes.mesh_0.geometry}
-            material={materials.material_0}
-            onClick={() => {
-              setTrow(!trow);
-            }}
-          />
-        </group>
-      </group>
+    <group ref={meshRef} {...props} dispose={null}>
+      <animated.mesh
+        rotation={animation.rotation}
+        scale={animation.scale}
+        geometry={nodes.mesh_0.geometry}
+        material={materials.material_0}
+        onClick={() => {
+          setTrow(!trow);
+        }}
+      />
     </group>
   );
 }

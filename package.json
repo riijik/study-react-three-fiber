@@ -13,6 +13,7 @@
     },
     "dependencies": {
         "@react-spring/three": "^9.4.3",
+        "@react-three/cannon": "^4.7.0",
         "@react-three/drei": "^8.10.4",
         "@types/copy-webpack-plugin": "^8.0.0",
         "@types/mini-css-extract-plugin": "^2.0.0",

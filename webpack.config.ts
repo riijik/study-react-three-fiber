@@ -42,7 +42,7 @@ function getRules({ target }: { target: 'client' | 'server' }) {
             use: '@svgr/webpack',
         },
         {
-            test: /\.(mp4|png|jpe?g|gif|ico)$/i,
+            test: /\.(mp4|png|jpe?g|gif|ico|bin)$/i,
             use: [
                 {
                     loader: 'file-loader',
@@ -53,6 +53,14 @@ function getRules({ target }: { target: 'client' | 'server' }) {
                     },
                 },
             ],
+        },
+        {
+            test: /\.(gltf)$/,
+            use: [
+                {
+                    loader: "gltf-webpack-loader"
+                }
+            ]
         },
         {
             test: /\.css$/,

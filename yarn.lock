@@ -76,9 +76,19 @@
     "@react-spring/rafz" "~9.4.3-beta.0"
     "@react-spring/types" "~9.4.3-beta.0"
 
-"@react-spring/three@^9.3.1", "@react-spring/three@^9.4.3":
+"@react-spring/three@^9.3.1":
   version "9.4.3"
   resolved "https://registry.npmjs.org/@react-spring/three/-/three-9.4.3.tgz"
+  integrity sha512-AhCPqoZZXUnzVcKal01sdYBRqkVd2iNxDMk7BGXZsQNWeqaOMaaBT/a6d3oG3wwPX6xIa9ogBtzmzEasN6HYzA==
+  dependencies:
+    "@react-spring/animated" "~9.4.3-beta.0"
+    "@react-spring/core" "~9.4.3-beta.0"
+    "@react-spring/shared" "~9.4.3-beta.0"
+    "@react-spring/types" "~9.4.3-beta.0"
+
+"@react-spring/three@^9.4.3":
+  version "9.4.3"
+  resolved "https://registry.yarnpkg.com/@react-spring/three/-/three-9.4.3.tgz#1836ea12f7cb7ccb4c4a1f39101f4fb17955c386"
   integrity sha512-AhCPqoZZXUnzVcKal01sdYBRqkVd2iNxDMk7BGXZsQNWeqaOMaaBT/a6d3oG3wwPX6xIa9ogBtzmzEasN6HYzA==
   dependencies:
     "@react-spring/animated" "~9.4.3-beta.0"
@@ -90,6 +100,14 @@
   version "9.4.3"
   resolved "https://registry.npmjs.org/@react-spring/types/-/types-9.4.3.tgz"
   integrity sha512-dzJrPvUc42K2un9y6D1IsrPQO5tKsbWwUo+wsATnXjG3ePWyuDBIOMJuPe605NhIXUmPH+Vik2wMoZz06hD1uA==
+
+"@react-three/cannon@^4.7.0":
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/@react-three/cannon/-/cannon-4.7.0.tgz#e616c656dabe0a9d1ebc6e43def6a5fe0f66577a"
+  integrity sha512-glgRxjyuXDdn1c7J9aRwvjUQXtrHM7i8Z0sD/iQYUsDfbcI23rCGoZ7K3KlXGTzNz3vafdsr3/4WSoCBoBTM3Q==
+  dependencies:
+    cannon-es "^0.18.0"
+    cannon-es-debugger "^1.0.0"
 
 "@react-three/drei@^8.10.4":
   version "8.10.4"
@@ -824,6 +842,16 @@ caniuse-lite@^1.0.30001219:
   version "1.0.30001242"
   resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001242.tgz"
   integrity sha512-KvNuZ/duufelMB3w2xtf9gEWCSxJwUgoxOx5b6ScLXC4kPc9xsczUVCPrQU26j5kOsHM4pSUL54tAZt5THQKug==
+
+cannon-es-debugger@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/cannon-es-debugger/-/cannon-es-debugger-1.0.0.tgz#28c6679b30dcf608e978225239f447a8fe55ccb4"
+  integrity sha512-sE9lDOBAYFKlh+0w+cvWKwUhJef8HYnUSVPWPL0jD15MAuVRQKno4QYZSGxgOoJkMR3mQqxL4bxys2b3RSWH8g==
+
+cannon-es@^0.18.0:
+  version "0.18.0"
+  resolved "https://registry.yarnpkg.com/cannon-es/-/cannon-es-0.18.0.tgz#ae831ff9df2352d5faabb269c11ea0f10bc35c7e"
+  integrity sha512-GiQ1bd0etZsMVSnUhNc+p+FEh0R/cULpp8uRSAhEK4Kax+y/31Au03m6h1h1xdDivAMnFg8YDwevHgzLynOHlw==
 
 chalk@^4.1.0:
   version "4.1.1"

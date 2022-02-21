@@ -9,17 +9,25 @@ import {
   MeshWobbleMaterial,
   OrbitControls,
 } from "@react-three/drei";
+import { Physics } from "@react-three/cannon";
 import { Coin } from "./components/coin";
+import { Plane } from "./components/plane";
 
 export function App() {
   const [showSphere, setSowSphere] = useState(false);
   return (
-    <Canvas className={style.canvas}>
+    <Canvas
+      className={style.canvas}
+      camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 5, 0] }}
+    >
       <ambientLight intensity={0.5} color="yellow" />
       <pointLight position={[10, 10, 10]} />
-      {/* <OrbitControls /> */}
+      <OrbitControls maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 3} />
       <Suspense fallback={null}>
-        <Coin scale={[0.1, 0.1, 0.1]} />
+        <Physics>
+          <Plane />
+          <Coin scale={[0.1, 0.1, 0.1]} position={[0.5, 0, 0]} />
+        </Physics>
       </Suspense>
     </Canvas>
   );
